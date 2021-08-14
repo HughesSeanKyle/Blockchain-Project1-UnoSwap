@@ -54,6 +54,7 @@
     }
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.2.0",
     "bignumber.js": "^4.1.0",
     "bluebird": "^3.5.1",
     "chai": "^4.3.4",
