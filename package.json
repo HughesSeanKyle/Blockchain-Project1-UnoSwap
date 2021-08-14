@@ -56,6 +56,9 @@
   "dependencies": {
     "bignumber.js": "^4.1.0",
     "bluebird": "^3.5.1",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-bn": "^0.3.0",
     "ethereumjs-util": "^5.1.2",
     "raf": "^3.4.0",
     "react": "^16.1.0",
