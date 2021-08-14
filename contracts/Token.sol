@@ -3,7 +3,9 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract Token is ERC20 {
+// Initial Supply to msg.sender address. 
+// Create LP Token for user when providing liquidity 
+contract UnoToken is ERC20 {
   constructor(
     string memory name,
     string memory symbol,
@@ -12,3 +14,4 @@ contract Token is ERC20 {
     _mint(msg.sender, initialSupply);
   }
 }
+
