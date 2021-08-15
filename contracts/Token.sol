@@ -5,13 +5,13 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 // Initial Supply to msg.sender address. 
 // Create LP Token for user when providing liquidity 
-contract UnoToken is ERC20 {
+contract Token is ERC20 {
   constructor(
     string memory name,
     string memory symbol,
     uint256 initialSupply
   ) ERC20(name, symbol) {
-    _mint(msg.sender, initialSupply);
+      _mint(msg.sender, initialSupply);
   }
 }
 
