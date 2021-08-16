@@ -12,7 +12,7 @@ module.exports = {
     // Ganache is 7545 (set inside app)
     // Truffle development is 9545 
     development: {
-      port: 9545,
+      port: 7545,
       host: "127.0.0.1",
       network_id: 5777,
       chainId: 1337
@@ -47,7 +47,7 @@ module.exports = {
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // timeout: 100000
+    timeout: 100000
   },
 
   // Configure your compilers

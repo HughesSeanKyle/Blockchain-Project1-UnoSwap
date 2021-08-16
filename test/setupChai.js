@@ -2,6 +2,7 @@
 // Chai required from node modules 
 // BN from web3 
 const chai = require('chai');
+
 const BN = web3.utils.BN;
 
 // This is from the tests in openZeppelin v122
