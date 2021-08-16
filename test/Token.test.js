@@ -15,6 +15,27 @@ const expect = chai.expect;
 // Require in CONSTANT variables from .env file 
 require('dotenv').config({ path: '../.env' });
 
+// First arg of contract will return the test accounts provided by truffle
 contract('Token Test', async (accounts) => {
     console.log(accounts);
+    // First of 3 accounts provided by truffle 
+    const [deployerAccount, recipient, anotherAccount] = accounts;
+
+    let newToken; 
+    beforeEach(async () => {
+        newToken = await Token.new('Unoswap', 'UNO', process.env.INITIAL_TOKENS);
+    });
+
+    // In the deploy script the 0 index account is set as the default interaction account
+    // Therefore, the deployer account is the default used here. 
+    it(`Should check the total supply equals deployer account balance`, async () => {
+        let instance = newToken;
+        let totalSupply = await instance.totalSupply();
+        let deployerAccBalance = await instance.balanceOf(deployerAccount);
+
+        return expect(
+            deployerAccBalance
+        ).to.be.a.bignumber.equal(totalSupply);
+    });
+
 });

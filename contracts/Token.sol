@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
 
 // Initial Supply to msg.sender address. 
-// Create LP Token for user when providing liquidity 
+// Create a token for a pool 
 contract Token is ERC20 {
   constructor(
     string memory name,

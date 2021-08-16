@@ -1,14 +1,18 @@
 const path = require("path");
 require("dotenv").config({path: "./.env"}); 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const AccountIndex = 0;
+
+// The mnemonic will generate accounts
+// This variable will give an instructions as to which one to use
+// Hardware wallet resource - [https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md] 
+const AccountIndex = 0; 
 
 module.exports = {
   networks: {
     // Ganache is 7545 (set inside app)
-    // Truffle development is 9545
+    // Truffle development is 9545 
     development: {
-      port: 7545,
+      port: 9545,
       host: "127.0.0.1",
       network_id: 5777,
       chainId: 1337
