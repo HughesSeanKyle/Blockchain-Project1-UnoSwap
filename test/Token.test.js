@@ -57,10 +57,20 @@ contract('Token Test', async (accounts) => {
         expect(await instance.balanceOf(recipient)).to.be.a.bignumber.equal(new BN(sendTokens));
       });
 
+      it("It's not possible to send more tokens than account 1 has", async () => {
+        let instance = newToken;
+        let balanceOfAccount = await instance.balanceOf(initialHolder);
+        expect(instance.transfer(recipient, new BN(balanceOfAccount+1))).to.eventually.be.rejected;
+  
+        //check if the balance is still the same
+        expect(await instance.balanceOf(initialHolder)).to.be.a.bignumber.equal(balanceOfAccount);
+      });
+
       /*
         // Test still to be written
         - - 1. Test to see if funds can be transferred to an exchange
         - - 2. Test to see if the exchange address can be approved ()
+            - - An ERC20 Token 
       */
     
 
