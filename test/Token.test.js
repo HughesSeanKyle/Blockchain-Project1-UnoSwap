@@ -21,7 +21,6 @@ require('dotenv').config({ path: '../.env' });
 
 // First arg of contract will return the test accounts provided by truffle
 contract('Token Test', async (accounts) => {
-    console.log(accounts);
     // First of 3 accounts provided by truffle 
     const [ initialHolder, recipient, anotherAccount ] = accounts;
 
@@ -34,7 +33,6 @@ contract('Token Test', async (accounts) => {
         let instance = newToken;
         let tokenName = await instance.name();
         let symbolName = await instance.symbol();
-        console.log(tokenName, symbolName);
 
         expect(tokenName).to.equal("TestToken");
         expect(symbolName).to.equal("T1");
