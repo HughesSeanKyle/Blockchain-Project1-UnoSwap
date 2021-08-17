@@ -30,6 +30,16 @@ contract('Token Test', async (accounts) => {
         newToken = await Token.new('TestToken', 'T1', process.env.INITIAL_TOKENS);
     });
 
+    it("Sets the token name & symbol on deploy", async () => {
+        let instance = newToken;
+        let tokenName = await instance.name();
+        let symbolName = await instance.symbol();
+        console.log(tokenName, symbolName);
+
+        expect(tokenName).to.equal("TestToken");
+        expect(symbolName).to.equal("T1");
+    });
+
     // In the deploy script the 0 index account is set as the default interaction account
     // Therefore, the deployer account is the default used here. 
     it(`Should check the total supply equals deployer account balance`, async () => {
